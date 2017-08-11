@@ -3,7 +3,7 @@
 aptitude -y install expect
 
 // Not required in actual script
-MYSQL_ROOT_PASSWORD=abcd1234
+MYSQL_ROOT_PASSWORD=root
 
 SECURE_MYSQL=$(expect -c "
 set timeout 10
@@ -11,7 +11,7 @@ spawn mysql_secure_installation
 expect \"Enter current password for root:\"
 send \"$MYSQL_ROOT_PASSWORD\r\"
 expect \"Would you like to setup VALIDATE PASSWORD plugin?\"
-send \"n\r\" 
+send \"n\r\"
 expect \"Change the password for root ?\"
 send \"n\r\"
 expect \"Remove anonymous users?\"
@@ -26,5 +26,5 @@ expect eof
 ")
 
 echo "$SECURE_MYSQL"
-
+mysql -u root -p root -e "CREATE DATABASE test;"
 aptitude -y purge expect
