@@ -1,8 +1,10 @@
 #!/bin/bash
 
 aptitude -y install expect
+export DEBIAN_FRONTEND=noninteractive
+sudo -E apt-get -q -y install mysql-server
 
-// Not required in actual script
+# Not required in actual script
 MYSQL_ROOT_PASSWORD=root
 
 SECURE_MYSQL=$(expect -c "
