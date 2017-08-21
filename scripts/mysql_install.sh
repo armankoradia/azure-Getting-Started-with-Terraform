@@ -1,6 +1,6 @@
 #!/bin/bash
-
-aptitude -y install expect
+apt-get update -y
+apt-get install -y expect
 export DEBIAN_FRONTEND=noninteractive
 sudo -E apt-get -q -y install mysql-server
 
@@ -29,4 +29,4 @@ expect eof
 
 echo "$SECURE_MYSQL"
 mysql -u root -p root -e "CREATE DATABASE test;"
-aptitude -y purge expect
+apt-get purge -y expect
