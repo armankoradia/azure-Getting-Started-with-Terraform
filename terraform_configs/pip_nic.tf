@@ -35,7 +35,7 @@ resource "azurerm_network_interface" "private_nic" {
   ip_configuration {
     name 			= "LA-Terraform-DBPrivate"
     subnet_id 			= "${azurerm_subnet.la_subnet_2.id}"
-    private_ip_address_allocation = "dynamic"
+    private_ip_address_allocation = "static"
     private_ip_address = "192.168.2.5"
   }
   tags {
