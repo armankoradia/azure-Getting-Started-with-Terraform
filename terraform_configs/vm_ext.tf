@@ -6,16 +6,16 @@ resource "azurerm_virtual_machine_extension" "cs_apache" {
   publisher 			= "Microsoft.OSTCExtensions"
   type 					= "CustomScriptForLinux"
   type_handler_version 	= "1.2"
-  
+
   settings = <<SETTINGS
   {
 	"fileUris": [
-	"LINK-TO-FILE"
+	"https://github.com/armankoradia/azure-Getting-Started-with-Terraform/blob/master/scripts/apache_php.sh"
 	],
 	"commandToExecute": "sh "
   }
 SETTINGS
-  
+
   tags {
 	group = "LinuxAcademy"
   }
@@ -29,16 +29,16 @@ resource "azurerm_virtual_machine_extension" "cs_mysql" {
   publisher 			= "Microsoft.OSTCExtensions"
   type 					= "CustomScriptForLinux"
   type_handler_version 	= "1.2"
-  
+
   settings = <<SETTINGS
   {
 	"fileUris": [
-	"LINK-TO-FILE"
+	"https://github.com/armankoradia/azure-Getting-Started-with-Terraform/blob/master/scripts/mysql_install.sh"
 	],
 	"commandToExecute": "sh "
   }
 SETTINGS
-  
+
   tags {
 	group = "LinuxAcademy"
   }
