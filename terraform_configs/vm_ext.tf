@@ -10,7 +10,7 @@ resource "azurerm_virtual_machine_extension" "cs_apache" {
   settings = <<SETTINGS
   {
 	"fileUris": [
-	"https://github.com/armankoradia/azure-Getting-Started-with-Terraform/blob/master/scripts/apache_php.sh"
+	"https://<AZURE-STORAGE-ACCOUNT-NAME>.blob.core.windows.net/<CONTAINER-NAME>/apache_php.sh"
 	],
 	"commandToExecute": "sh apache_php.sh"
   }
@@ -33,7 +33,7 @@ resource "azurerm_virtual_machine_extension" "cs_mysql" {
   settings = <<SETTINGS
   {
 	"fileUris": [
-	"https://github.com/armankoradia/azure-Getting-Started-with-Terraform/blob/master/scripts/mysql_install.sh"
+	"https://<AZURE-STORAGE-ACCOUNT-NAME>.blob.core.windows.net/<CONTAINER-NAME>/mysql_install.sh"
 	],
 	"commandToExecute": "sh mysql_install.sh"
   }

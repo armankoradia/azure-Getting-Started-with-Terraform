@@ -29,5 +29,6 @@ expect eof
 ")
 
 echo "$SECURE_MYSQL"
-mysql -u root -p root -e "CREATE DATABASE test;"
+mysql -uroot -pmysql -e "CREATE DATABASE test;"
 apt-get purge -y expect
+
