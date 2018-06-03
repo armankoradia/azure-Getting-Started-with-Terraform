@@ -9,7 +9,7 @@ echo "Installing Apache2"
 sudo apt-get -y install apache2
 
 #Finding Public IP of Server
-PUB_IP="$(ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//')"
+PUB_IP="$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')"
 
 #Editing apache2.conf file
 echo "ServerName $PUB_IP" >> /etc/apache2/apache2.conf
