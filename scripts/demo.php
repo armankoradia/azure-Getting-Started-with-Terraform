@@ -1,7 +1,7 @@
 <?php
    if( $_POST["name"]  ) {
    	$name = $_POST["name"];
-   	$servername = "localhost";
+   	$servername = "192.168.2.5";
 	$username = "root";
 	$password = "root";
 	$dbname = "test";
