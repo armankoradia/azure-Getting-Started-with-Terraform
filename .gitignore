@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Terraform specific
+terraform_configs/.terraform
+terraform_configs/terraform.tfstate
+terraform_configs/terraform.tfstate.backup
